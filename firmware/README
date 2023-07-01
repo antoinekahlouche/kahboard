@@ -1,11 +1,12 @@
--> https://github.com/qmk/qmk_firmware/blob/master/docs/newbs_getting_started.md
+Install qmk
+-> https://github.com/qmk/qmk_firmware/blob/master/docs/newbs.md
 
-https://config.qmk.fm/#/ferris/sweep/LAYOUT_split_3x5_2
+deplacer dossier firmwar/kahboard dans qmk_firmware/keyboard
 
-qmk compile -kb clueboard/66/rev3 -km default
+```
+qmk compile -kb kahboard/keyboard -km default
+```
 
+install qmk_toolbox
 
-
-https://github.com/qmk/qmk_firmware/blob/master/docs/feature_split_keyboard.md
-
-https://www.google.com/search?rlz=1C5CHFA_enFR984FR984&sxsrf=AB5stBimTXFUzphz2njvKFBNv_Ylho2DEw:1688185810654&q=pro+micro+pinout&tbm=isch&sa=X&ved=2ahUKEwiS7Luc1uz_AhXqEVkFHT2nDl4Q0pQJegQIDBAB&biw=960&bih=912#imgrc=Lp4j6gZsFVwfRM
+flash keyboard
