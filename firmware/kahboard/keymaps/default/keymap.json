@@ -10,19 +10,19 @@
             "KC_Q", "KC_W", "KC_E", "KC_R", "KC_T",                             "KC_Y", "KC_U", "KC_I", "KC_O", "KC_QUOT", 
             "KC_A", "CTL_T(KC_S)", "OPT_T(KC_D)", "CMD_T(KC_F)", "KC_G",        "KC_H", "CMD_T(KC_J)", "OPT_T(KC_K)", "CTL_T(KC_L)", "KC_SCLN",
             "KC_Z", "KC_X", "KC_C", "KC_V", "KC_B",                             "KC_N", "KC_M", "KC_COMM", "KC_DOT", "S(KC_SLSH)",
-            "LT(2, KC_TAB)", "LT(1, KC_SPC)",                                   "LT(4, KC_BSPC)", "LT(3, KC_ENT)"
+            "LT(2, KC_TAB)", "LT(1, KC_BSPC)",                                   "LT(4, KC_SPC)", "LT(3, KC_ENT)"
         ],
         [
             "S(KC_Q)", "S(KC_W)", "S(KC_E)", "S(KC_R)", "S(KC_T)",              "S(KC_Y)", "S(KC_U)", "S(KC_I)", "S(KC_O)", "S(KC_QUOT)", 
             "S(KC_A)", "S(KC_S)", "S(KC_D)", "S(KC_F)", "S(KC_G)",              "S(KC_H)", "S(KC_J)", "S(KC_K)", "S(KC_L)", "S(KC_SCLN)",
             "S(KC_Z)", "S(KC_X)", "S(KC_C)", "S(KC_V)", "S(KC_B)",              "S(KC_N)", "S(KC_M)", "KC_P", "S(KC_P)", "S(KC_1)",
-            "S(KC_TAB)", "KC_NO",                                               "KC_DEL", "S(KC_ENT)"
+            "S(KC_TAB)", "KC_NO",                                               "S(KC_SPC)", "S(KC_ENT)"
         ],
         [
             "S(KC_2)", "S(KC_3)", "A(S(KC_2))", "S(KC_4)", "S(KC_5)",           "KC_NO", "KC_EQL", "KC_MINS", "S(KC_EQL)", "KC_GRV",
             "S(KC_COMM)", "S(KC_DOT)", "S(KC_9)", "S(KC_0)", "S(KC_7)",         "S(KC_BSLS)", "S(KC_LBRC)", "S(KC_RBRC)", "KC_LBRC", "KC_RBRC",
             "A(KC_I)", "A(KC_L)", "A(KC_C)", "A(KC_K)", "A(KC_GRV)",            "S(KC_GRV)", "S(KC_MINS)", "KC_SLSH", "S(KC_8)", "KC_NO",
-            "KC_NO", "KC_NO",                                                   "G(C(KC_SPC))", "KC_NO"
+            "KC_NO", "KC_DEL",                                                   "G(C(KC_SPC))", "KC_NO"
         ],
         [
             "KC_NO", "KC_NO", "KC_NO","KC_NO", "KC_NO",                         "KC_NO", "KC_MPRV", "KC_VOLD", "KC_VOLU", "KC_MNXT",
