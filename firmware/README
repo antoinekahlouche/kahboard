@@ -10,3 +10,9 @@ qmk compile -kb kahboard/keyboard -km default
 install qmk_toolbox
 
 flash keyboard
+
+
+
+
+
+https://docs.qmk.fm/#/keycodes?id=basic-keycodes
