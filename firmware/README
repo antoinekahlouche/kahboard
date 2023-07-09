@@ -1,18 +1,11 @@
-Install qmk
--> https://github.com/qmk/qmk_firmware/blob/master/docs/newbs.md
+http://www.keyboard-layout-editor.com/
 
-deplacer dossier firmwar/kahboard dans qmk_firmware/keyboard
+![Base layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/base.png?raw=true)
 
-```
-qmk compile -kb kahboard/keyboard -km default
-```
+![Shift layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/shift.png?raw=true)
 
-install qmk_toolbox
+![Symbols layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/symbols.png?raw=true)
 
-flash keyboard
+![Navigation layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/navigation.png?raw=true)
 
-
-
-
-
-https://docs.qmk.fm/#/keycodes?id=basic-keycodes
+![Numbers layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/numbers.png?raw=true)
