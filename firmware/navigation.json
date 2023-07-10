@@ -1,4 +1,4 @@
-[{a:5},"\nSCR\n\n\n\n\nPRT",{a:7},"PREV",{a:5,f2:2},"\nPAUSE\n\n\n\n\nPLAY",{a:7},"NEXT",{f:6},"",{x:1},"",{a:5,f:3},"\nLEFT\n\n\n\n\nDESK","\nTAB\n\n\n\n\nALT","\nTAB\n\n\n\n\nCTRL","\nRIGHT\n\n\n\n\nDESK"],
-[{a:7,f:6},"⎋",{f:3},"VOL-","MUTE","VOL+",{f:6},"",{x:1},"","◀","▼","▲","▶"],
-[{f:3},"SLEEP",{f:6},"⌘","⌥","⌃",{a:5,f:3},"\nMAC\n\n\n\n\nWIN",{x:1,a:7,f:6},"",{f:3},"HOME",{f:6},"8","9",{f:3},"END"],
+[{a:7},"PRT SCR","PREV","PLAY PAUSE","NEXT",{f:6},"",{x:1},"",{f:3},"DESK LEFT","ALT TAB","CTRL TAB","DESK RIGHT"],
+[{f:6},"⎋",{f:3},"VOL-","MUTE","VOL+",{f:6},"",{x:1},"","◀","▼","▲","▶"],
+[{f:3},"SLEEP",{f:6},"⌘","⌥","⌃",{f:3},"WIN MAC",{x:1,f:6},"",{f:3},"HOME",{f:2},"1 WORD LEFT","1 WORD RIGHT",{f:3},"END"],
 [{x:3},"",{f:6},"⇧",{x:1,c:"#00ff00"},"",{c:"#cccccc"},""]
