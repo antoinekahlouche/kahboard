@@ -1,49 +1,138 @@
 #include QMK_KEYBOARD_H
 
+// DEFINE COLEMAK KC IN QWERTY -------------------------------------------------
+
+#define CO_Q KC_Q
+#define CO_W KC_W
+#define CO_F KC_E
+#define CO_P KC_R
+#define CO_G KC_T
+#define CO_J KC_Y
+#define CO_L KC_U
+#define CO_U KC_I
+#define CO_Y KC_O
+#define CO_SEMICOLON KC_P
+#define CO_A KC_A
+#define CO_R KC_S
+#define CO_S KC_D
+#define CO_T KC_F
+#define CO_D KC_G
+#define CO_H KC_H
+#define CO_N KC_J
+#define CO_E KC_K
+#define CO_I KC_L
+#define CO_O KC_SEMICOLON
+#define CO_Z KC_Z
+#define CO_X KC_X
+#define CO_C KC_C
+#define CO_V KC_V
+#define CO_B KC_B
+#define CO_K KC_N
+#define CO_M KC_M
+
 // MACROS ----------------------------------------------------------------------
 
+bool is_alt_tab_active = false;
+bool is_gui_tab_active = false;
+bool is_ctl_tab_active = false;
 enum custom_keycodes {
     DEGREE = SAFE_RANGE,
+    GUI_TAB,
+    ALT_TAB,
+    CTL_TAB,
 };
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-    case DEGREE:
-        if (record->event.pressed) {
-            clear_keyboard();
-            SEND_STRING(SS_LALT(SS_TAP(X_P0) SS_TAP(X_P1) SS_TAP(X_P7) SS_TAP(X_P6)));
-        }
-        break;
+        case DEGREE:
+            if (record->event.pressed) {
+                clear_keyboard();
+                SEND_STRING(SS_LALT(SS_TAP(X_P0) SS_TAP(X_P1) SS_TAP(X_P7) SS_TAP(X_P6)));
+            }
+            break;
+        case GUI_TAB:
+            if (record->event.pressed) {
+                if (!is_gui_tab_active) {
+                    is_gui_tab_active = true;
+                    register_code(KC_LGUI);
+                }
+                register_code(KC_TAB);
+            } else {
+                unregister_code(KC_TAB);
+            }
+            break;
+        case ALT_TAB:
+            if (record->event.pressed) {
+                if (!is_alt_tab_active) {
+                    is_alt_tab_active = true;
+                    register_code(KC_LALT);
+                }
+                register_code(KC_TAB);
+            } else {
+                unregister_code(KC_TAB);
+            }
+            break;
+        case CTL_TAB:
+            if (record->event.pressed) {
+                if (!is_ctl_tab_active) {
+                    is_ctl_tab_active = true;
+                    register_code(KC_LCTL);
+                }
+                register_code(KC_TAB);
+            } else {
+                unregister_code(KC_TAB);
+            }
+            break;
     }
     return true;
 };
+void matrix_scan_user(void) {
+    if (is_gui_tab_active) {
+        if (!layer_state_is(2)) {
+            unregister_code(KC_LGUI);
+            is_gui_tab_active = false;
+        }
+    }
+    if (is_alt_tab_active) {
+        if (!layer_state_is(6)) {
+            unregister_code(KC_LALT);
+            is_alt_tab_active = false;
+        }
+    }
+    if (is_ctl_tab_active) {
+        if (!layer_state_is(2) && !layer_state_is(6)) {
+            unregister_code(KC_LCTL);
+            is_ctl_tab_active = false;
+        }
+    }
+}
 
 // LAYERS ----------------------------------------------------------------------
 
 enum kahboard_layers {
-  _MAC_QWERTY,
-  _MAC_SYMBOLS,
-  _MAC_NAVIGATION,
-  _MAC_NUMBERS,
-  _WIN_QWERTY,
-  _WIN_SYMBOLS,
-  _WIN_NAVIGATION,
-  _WIN_NUMBERS
+    _MAC_QWERTY,
+    _MAC_SYMBOLS,
+    _MAC_NAVIGATION,
+    _MAC_NUMBERS,
+    _WIN_QWERTY,
+    _WIN_SYMBOLS,
+    _WIN_NAVIGATION,
+    _WIN_NUMBERS
 };
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MAC_QWERTY] = LAYOUT(
-        KC_Q, KC_W, KC_E, KC_R, KC_T,                                           KC_Y, KC_U, KC_I, KC_O, KC_QUOT, 
-        KC_A, KC_S, KC_D, KC_F, KC_G,                                           KC_H, KC_J, KC_K, KC_L, KC_SCLN,
-        KC_Z, LGUI_T(KC_X), LALT_T(KC_C), LCTL_T(KC_V), KC_B,                   KC_N, RCTL_T(KC_M), RALT_T(KC_COMM), RGUI_T(KC_DOT), S(KC_SLSH),
+        CO_Q, CO_W, CO_F, CO_P, CO_G,                                           CO_J, CO_L, CO_U, CO_Y, KC_QUOT, 
+        CO_A, CO_R, CO_S, CO_T, CO_D,                                           CO_H, CO_N, CO_E, CO_I, CO_O,
+        CO_Z, LGUI_T(CO_X), LALT_T(CO_C), LCTL_T(CO_V), CO_B,                   CO_K, RCTL_T(CO_M), RALT_T(KC_COMM), RGUI_T(KC_DOT), S(KC_SLSH),
         LT(1, KC_TAB), LSFT_T(KC_BSPC),                                         LT(2, KC_SPC), LT(3, KC_ENT)
     ),
     [_MAC_SYMBOLS] = LAYOUT(
         S(KC_2), S(KC_3), A(S(KC_2)), S(KC_4), S(KC_5),                         KC_NO, KC_EQL, KC_MINS, S(KC_EQL), KC_GRV,
         S(KC_COMM), S(KC_DOT), S(KC_9), S(KC_0), S(KC_7),                       S(KC_BSLS), S(KC_LBRC), S(KC_RBRC), KC_LBRC, KC_RBRC,
-        A(KC_I), A(KC_L), A(KC_C), A(KC_K), A(KC_GRV),                          S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), A(S(KC_8)),
+        A(CO_U), A(CO_I), A(CO_C), A(CO_E), A(KC_GRV),                          S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), A(S(KC_8)),
         KC_NO, KC_DEL,                                                          G(C(KC_SPC)), G(KC_SPC)
     ),
     [_MAC_NAVIGATION] = LAYOUT(
-        G(S(KC_S)), KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                           KC_NO, C(KC_LEFT), G(KC_TAB), C(KC_TAB), C(KC_RIGHT),
+        G(S(KC_5)), KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                           KC_NO, C(KC_LEFT), GUI_TAB, CTL_TAB, C(KC_RIGHT),
         KC_ESC, KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,                               KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
         A(G(KC_EJCT)), KC_LGUI, KC_LALT, KC_RCTL, DF(4),                        KC_NO, G(KC_LEFT), A(KC_LEFT), A(KC_RIGHT), G(KC_RIGHT),
         KC_NO, KC_LSFT,                                                         KC_NO, KC_NO
@@ -55,19 +144,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         G(KC_SPC), KC_NO,                                                       KC_NO, KC_NO
     ),
     [_WIN_QWERTY] = LAYOUT(
-        KC_Q, KC_W, KC_E, KC_R, KC_T,                                           KC_Y, KC_U, KC_I, KC_O, KC_QUOT, 
-        KC_A, KC_S, KC_D, KC_F, KC_G,                                           KC_H, KC_J, KC_K, KC_L, KC_SCLN,
-        KC_Z, LCTL_T(KC_X), LALT_T(KC_C), LGUI_T(KC_V), KC_B,                   KC_N, RGUI_T(KC_M), RALT_T(KC_COMM), RCTL_T(KC_DOT), S(KC_SLSH),
+        CO_Q, CO_W, CO_F, CO_P, CO_G,                                           CO_J, CO_L, CO_U, CO_Y, KC_QUOT, 
+        CO_A, CO_R, CO_S, CO_T, CO_D,                                           CO_H, CO_N, CO_E, CO_I, CO_O,
+        CO_Z, LCTL_T(CO_X), LALT_T(CO_C), LGUI_T(CO_V), CO_B,                   CO_K, RGUI_T(CO_M), RALT_T(KC_COMM), RCTL_T(KC_DOT), S(KC_SLSH),
         LT(5, KC_TAB), LSFT_T(KC_BSPC),                                         LT(6, KC_SPC), LT(7, KC_ENT)
     ),
     [_WIN_SYMBOLS] = LAYOUT(
         S(KC_2), S(KC_3), ALGR(KC_5), S(KC_4), S(KC_5),                         KC_NO, KC_EQL, KC_MINS, S(KC_EQL), KC_GRV,
         S(KC_COMM), S(KC_DOT), S(KC_9), S(KC_0), S(KC_7),                       S(KC_BSLS), S(KC_LBRC), S(KC_RBRC), KC_LBRC, KC_RBRC,
-        ALGR(KC_G), ALGR(KC_X), ALGR(KC_C), ALGR(KC_F), ALGR(KC_S),             S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), DEGREE,
+        ALGR(CO_D), ALGR(CO_X), ALGR(CO_C), ALGR(CO_T), ALGR(CO_R),             S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), DEGREE,
         KC_NO, KC_DEL,                                                          G(KC_DOT), A(KC_SPC)
     ),
     [_WIN_NAVIGATION] = LAYOUT(
-        KC_PSCR, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                              KC_NO, C(G(KC_LEFT)), A(KC_TAB), C(KC_TAB), C(G(KC_RIGHT)),
+        KC_PSCR, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                              KC_NO, C(G(KC_LEFT)), ALT_TAB, CTL_TAB, C(G(KC_RIGHT)),
         KC_ESC, KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,                               KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
         KC_PWR, KC_RCTL, KC_LALT, KC_LGUI, DF(0),                               KC_NO, KC_HOME, C(KC_LEFT), C(KC_RIGHT), KC_END,
         KC_NO, KC_LSFT,                                                         KC_NO, KC_NO
@@ -82,9 +171,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // OVERRIDES -------------------------------------------------------------------
 
-const key_override_t comm = ko_make_basic(MOD_MASK_SHIFT, RALT_T(KC_COMM), KC_P); // Shift , is ;
-const key_override_t macDot = ko_make_basic(MOD_MASK_SHIFT, RGUI_T(KC_DOT), S(KC_P)); // Shift . is :
-const key_override_t winDot = ko_make_basic(MOD_MASK_SHIFT, RCTL_T(KC_DOT), S(KC_P)); // Shift . is :
+const key_override_t comm = ko_make_basic(MOD_MASK_SHIFT, RALT_T(KC_COMM), CO_SEMICOLON); // Shift , is ;
+const key_override_t macDot = ko_make_basic(MOD_MASK_SHIFT, RGUI_T(KC_DOT), S(CO_SEMICOLON)); // Shift . is :
+const key_override_t winDot = ko_make_basic(MOD_MASK_SHIFT, RCTL_T(KC_DOT), S(CO_SEMICOLON)); // Shift . is :
 const key_override_t ques = ko_make_basic(MOD_MASK_SHIFT, KC_QUES, S(KC_1)); // Shift ? is !
 const key_override_t** key_overrides = (const key_override_t*[]) {
     &comm,
