@@ -7,6 +7,12 @@
         "device_version": "0.0.1"
     },
     "development_board": "promicro",
+    "features": {
+        "bootmagic": true,
+        "extrakey": true,
+        "mousekey": true,
+        "unicode": true
+    },
     "matrix_pins": {
         "direct": [
             ["B2", "D4", "F6", "D1", "F4"],
@@ -18,6 +24,9 @@
     "split": {
         "enabled": true,
         "soft_serial_pin": "D2",
+        "bootmagic": {
+            "matrix": [4, 4]
+        },
         "matrix_pins": {
             "right": {
                 "direct": [
