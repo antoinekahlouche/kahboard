@@ -74,13 +74,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 void matrix_scan_user(void) {
     if (is_alt_tab_active) {
-        if (!layer_state_is(6)) {
+        if (!layer_state_is(2)) {
             unregister_code(KC_LALT);
             is_alt_tab_active = false;
         }
     }
     if (is_ctl_tab_active) {
-        if (!layer_state_is(2) && !layer_state_is(6)) {
+        if (!layer_state_is(2)) {
             unregister_code(KC_LCTL);
             is_ctl_tab_active = false;
         }
@@ -90,31 +90,31 @@ void matrix_scan_user(void) {
 // LAYERS ----------------------------------------------------------------------
 
 enum kahboard_layers {
-    _QWERTY,
-    _SYMBOLS,
-    _NAVIGATION,
-    _NUMBERS
+    _BASE,
+    _SYM,
+    _NAV,
+    _NUM
 };
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_QWERTY] = LAYOUT(
+    [_BASE] = LAYOUT(
         CO_Q, CO_W, CO_F, CO_P, CO_G,                                           CO_J, CO_L, CO_U, CO_Y, KC_QUOT, 
         CO_A, CO_R, CO_S, CO_T, CO_D,                                           CO_H, CO_N, CO_E, CO_I, CO_O,
         CO_Z, LCTL_T(CO_X), LALT_T(CO_C), LGUI_T(CO_V), CO_B,                   CO_K, RGUI_T(CO_M), RALT_T(KC_COMM), RCTL_T(KC_DOT), S(KC_SLSH),
-        LT(1, KC_TAB), LSFT_T(KC_BSPC),                                         LT(2, KC_SPC), LT(3, KC_ENT)
+        LT(_SYM, KC_TAB), LSFT_T(KC_BSPC),                                      LT(_NAV, KC_SPC), LT(_NUM, KC_ENT)
     ),
-    [_SYMBOLS] = LAYOUT(
+    [_SYM] = LAYOUT(
         S(KC_2), S(KC_3), ALGR(KC_5), S(KC_4), S(KC_5),                         KC_NO, KC_EQL, KC_MINS, S(KC_EQL), KC_GRV,
         S(KC_COMM), S(KC_DOT), S(KC_9), S(KC_0), S(KC_7),                       S(KC_BSLS), S(KC_LBRC), S(KC_RBRC), KC_LBRC, KC_RBRC,
         ALGR(CO_D), ALGR(CO_X), ALGR(CO_C), ALGR(CO_T), ALGR(CO_R),             S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), DEGREE,
         KC_NO, KC_DEL,                                                          G(KC_DOT), A(KC_SPC)
     ),
-    [_NAVIGATION] = LAYOUT(
+    [_NAV] = LAYOUT(
         KC_PSCR, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                              KC_NO, C(G(KC_LEFT)), ALT_TAB, CTL_TAB, C(G(KC_RIGHT)),
         KC_ESC, KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,                               KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
         KC_PWR, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,                               KC_NO, C(KC_LEFT), KC_HOME, KC_END, C(KC_RIGHT),
         KC_NO, KC_LSFT,                                                         KC_NO, KC_NO
     ),
-    [_NUMBERS] = LAYOUT(
+    [_NUM] = LAYOUT(
         KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                      KC_NO, KC_P1, KC_P2, KC_P3, KC_NO,
         KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,                                     KC_P0, KC_P4, KC_P5, KC_P6, KC_NO,
         KC_F11, KC_F12, KC_F13, KC_F14, KC_F15,                                 KC_NO, KC_P7, KC_P8, KC_P9, KC_NO,
