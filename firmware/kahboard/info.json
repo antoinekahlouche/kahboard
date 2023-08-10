@@ -1,94 +1,88 @@
 {
-    "url": "https://github.com/antoinekahlouche/kahboard",
-    "maintainer": "@antoinekahlouche",
-    "keyboard_name": "Kahboard",
-    "manufacturer": "AntoineKahlouche",
-    "usb": {
-        "vid": "0xC2AB",
-        "pid": "0x3939",
-        "device_version": "0.0.1"
-    },
-    "development_board": "promicro",
-    "features": {
-        "bootmagic": true,
-        "extrakey": true,
-        "mousekey": true,
-        "unicode": true
-    },
+  "url": "https://github.com/antoinekahlouche/kahboard",
+  "maintainer": "@antoinekahlouche",
+  "keyboard_name": "Kahboard",
+  "manufacturer": "AntoineKahlouche",
+  "usb": {
+    "vid": "0x0000",
+    "pid": "0x0000",
+    "device_version": "1.0.0"
+  },
+  "development_board": "promicro",
+  "features": {
+      "extrakey": true
+  },
+  "matrix_pins": {
+    "direct": [
+      ["B2", "D4", "F6", "D1", "F4"],
+      ["E6", "B3", "D0", "F5", "D3"],
+      ["B6", "D7", "B1", "C6", "F7"],
+      ["B4", "B5", null, null, null]
+    ]
+  },
+  "split": {
+    "enabled": true,
+    "soft_serial_pin": "D2",
     "matrix_pins": {
+      "right": {
         "direct": [
-            ["B2", "D4", "F6", "D1", "F4"],
-            ["E6", "B3", "D0", "F5", "D3"],
-            ["B6", "D7", "B1", "C6", "F7"],
-            ["B4", "B5", null, null, null]
+          ["F4", "D1", "F6", "D4", "B2"],
+          ["D3", "F5", "D0", "B3", "E6"],
+          ["F7", "C6", "B1", "D7", "B6"],
+          ["B5", "B4", null, null, null]
         ]
-    },
-    "split": {
-        "enabled": true,
-        "soft_serial_pin": "D2",
-        "bootmagic": {
-            "matrix": [4, 4]
-        },
-        "matrix_pins": {
-            "right": {
-                "direct": [
-                    ["F4", "D1", "F6", "D4", "B2"],
-                    ["D3", "F5", "D0", "B3", "E6"],
-                    ["F7", "C6", "B1", "D7", "B6"],
-                    ["B5", "B4", null, null, null]
-                ]
-            }
-        }
-    },
-    "community_layouts": ["split_3x5_2"],
-    "layout_aliases": {
-        "LAYOUT": "LAYOUT_split_3x5_2"
-    },
-    "layouts": {
-        "LAYOUT_split_3x5_2": {
-            "layout": [
-                { "x": 0, "y": 0.93, "matrix": [0, 0] },
-                { "x": 1, "y": 0.31, "matrix": [0, 1] },
-                { "x": 2, "y": 0, "matrix": [0, 2] },
-                { "x": 3, "y": 0.28, "matrix": [0, 3] },
-                { "x": 4, "y": 0.42, "matrix": [0, 4] },
-
-                { "x": 7, "y": 0.42, "matrix": [4, 0] },
-                { "x": 8, "y": 0.28, "matrix": [4, 1] },
-                { "x": 9, "y": 0, "matrix": [4, 2] },
-                { "x": 10, "y": 0.31, "matrix": [4, 3] },
-                { "x": 11, "y": 0.93, "matrix": [4, 4] },
-
-                { "x": 0, "y": 1.93, "matrix": [1, 0] },
-                { "x": 1, "y": 1.31, "matrix": [1, 1] },
-                { "x": 2, "y": 1, "matrix": [1, 2] },
-                { "x": 3, "y": 1.28, "matrix": [1, 3] },
-                { "x": 4, "y": 1.42, "matrix": [1, 4] },
-
-                { "x": 7, "y": 1.42, "matrix": [5, 0] },
-                { "x": 8, "y": 1.28, "matrix": [5, 1] },
-                { "x": 9, "y": 1, "matrix": [5, 2] },
-                { "x": 10, "y": 1.31, "matrix": [5, 3] },
-                { "x": 11, "y": 1.93, "matrix": [5, 4] },
-
-                { "x": 0, "y": 2.93, "matrix": [2, 0] },
-                { "x": 1, "y": 2.31, "matrix": [2, 1] },
-                { "x": 2, "y": 2, "matrix": [2, 2] },
-                { "x": 3, "y": 2.28, "matrix": [2, 3] },
-                { "x": 4, "y": 2.42, "matrix": [2, 4] },
-
-                { "x": 7, "y": 2.42, "matrix": [6, 0] },
-                { "x": 8, "y": 2.28, "matrix": [6, 1] },
-                { "x": 9, "y": 2, "matrix": [6, 2] },
-                { "x": 10, "y": 2.31, "matrix": [6, 3] },
-                { "x": 11, "y": 2.93, "matrix": [6, 4] },
-
-                { "x": 3.5, "y": 3.75, "matrix": [3, 0] },
-                { "x": 4.5, "y": 4, "matrix": [3, 1] },
-
-                { "x": 6.5, "y": 4, "matrix": [7, 0] },
-                { "x": 7.5, "y": 3.75, "matrix": [7, 1] }
-            ]
-        }
+      }
     }
+  },
+  "community_layouts": ["split_3x5_2"],
+  "layout_aliases": {
+    "LAYOUT": "LAYOUT_split_3x5_2"
+  },
+  "layouts": {
+    "LAYOUT_split_3x5_2": {
+      "layout": [
+        { "x": 0, "y": 0.93, "matrix": [0, 0] },
+        { "x": 1, "y": 0.31, "matrix": [0, 1] },
+        { "x": 2, "y": 0, "matrix": [0, 2] },
+        { "x": 3, "y": 0.28, "matrix": [0, 3] },
+        { "x": 4, "y": 0.42, "matrix": [0, 4] },
+
+        { "x": 7, "y": 0.42, "matrix": [4, 0] },
+        { "x": 8, "y": 0.28, "matrix": [4, 1] },
+        { "x": 9, "y": 0, "matrix": [4, 2] },
+        { "x": 10, "y": 0.31, "matrix": [4, 3] },
+        { "x": 11, "y": 0.93, "matrix": [4, 4] },
+
+        { "x": 0, "y": 1.93, "matrix": [1, 0] },
+        { "x": 1, "y": 1.31, "matrix": [1, 1] },
+        { "x": 2, "y": 1, "matrix": [1, 2] },
+        { "x": 3, "y": 1.28, "matrix": [1, 3] },
+        { "x": 4, "y": 1.42, "matrix": [1, 4] },
+
+        { "x": 7, "y": 1.42, "matrix": [5, 0] },
+        { "x": 8, "y": 1.28, "matrix": [5, 1] },
+        { "x": 9, "y": 1, "matrix": [5, 2] },
+        { "x": 10, "y": 1.31, "matrix": [5, 3] },
+        { "x": 11, "y": 1.93, "matrix": [5, 4] },
+
+        { "x": 0, "y": 2.93, "matrix": [2, 0] },
+        { "x": 1, "y": 2.31, "matrix": [2, 1] },
+        { "x": 2, "y": 2, "matrix": [2, 2] },
+        { "x": 3, "y": 2.28, "matrix": [2, 3] },
+        { "x": 4, "y": 2.42, "matrix": [2, 4] },
+
+        { "x": 7, "y": 2.42, "matrix": [6, 0] },
+        { "x": 8, "y": 2.28, "matrix": [6, 1] },
+        { "x": 9, "y": 2, "matrix": [6, 2] },
+        { "x": 10, "y": 2.31, "matrix": [6, 3] },
+        { "x": 11, "y": 2.93, "matrix": [6, 4] },
+
+        { "x": 3.5, "y": 3.75, "matrix": [3, 0] },
+        { "x": 4.5, "y": 4, "matrix": [3, 1] },
+
+        { "x": 6.5, "y": 4, "matrix": [7, 0] },
+        { "x": 7.5, "y": 3.75, "matrix": [7, 1] }
+      ]
+    }
+  }
 }

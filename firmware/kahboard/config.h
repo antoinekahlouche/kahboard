@@ -1,6 +1,7 @@
 #pragma once
 
 #define EE_HANDS
-#define USE_SERIAL
-#define SPLIT_MODS_ENABLE
+#define PERMISSIVE_HOLD
 #define SPLIT_USB_DETECT
+#define TAPPING_TERM 200
+#define USB_SUSPEND_WAKEUP_DELAY 200
