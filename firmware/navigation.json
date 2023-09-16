@@ -1,4 +1,4 @@
-[{a:7},"PRT SCR","PREV","PLAY PAUSE","NEXT",{f:6},"",{x:1},"",{f:3},"DESK LEFT","ALT TAB","CTRL TAB","DESK RIGHT"],
-[{f:6},"⎋",{f:3},"VOL-","MUTE","VOL+",{f:6},"",{x:1},"","◀","▼","▲","▶"],
-[{f:3},"SLEEP",{f:6},"⌘","⌥","⌃",{f:3},"",{x:1,f:6},"",{f:2},"1 WORD LEFT",{f:3},"HOME","END",{f:2},"1 WORD RIGHT"],
+[{a:7},"PRT SCR","","","","SLEEP",{x:1},"VOL+","DESK LEFT","ALT TAB","CTRL TAB","DESK RIGHT"],
+[{f:6},"⎋",{f:3},"PREV","PLAY PAUSE","NEXT",{f:6},"",{x:1,f:3},"VOL-",{f:6},"◀","▼","▲","▶"],
+[{f:3},"",{f:6},"⌘","⌥","⌃",{f:3},"",{x:1},"MUTE",{f:2},"1 WORD LEFT",{f:3},"HOME","END",{f:2},"1 WORD RIGHT"],
 [{x:3,f:3},"",{f:6},"⇧",{x:1,c:"#00ff00"},"",{c:"#cccccc"},""]

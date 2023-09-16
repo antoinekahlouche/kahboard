@@ -109,9 +109,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO, KC_DEL,                                                          G(KC_DOT), A(KC_SPC)
     ),
     [_NAV] = LAYOUT(
-        KC_PSCR, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                              KC_NO, C(G(KC_LEFT)), ALT_TAB, CTL_TAB, C(G(KC_RIGHT)),
-        KC_ESC, KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,                               KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
-        KC_PWR, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,                               KC_NO, C(KC_LEFT), KC_HOME, KC_END, C(KC_RIGHT),
+        KC_PSCR, KC_NO, KC_NO, KC_NO, KC_PWR,                                   KC_VOLU, C(G(KC_LEFT)), ALT_TAB, CTL_TAB, C(G(KC_RIGHT)),
+        KC_ESC, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                               KC_VOLD, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
+        KC_NO, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,                                KC_MUTE, C(KC_LEFT), KC_HOME, KC_END, C(KC_RIGHT),
         KC_NO, KC_LSFT,                                                         KC_NO, KC_NO
     ),
     [_NUM] = LAYOUT(
