@@ -103,13 +103,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LT(_SYM, KC_TAB), LSFT_T(KC_BSPC),                                      LT(_NAV, KC_SPC), LT(_NUM, KC_ENT)
     ),
     [_SYM] = LAYOUT(
-        S(KC_2), S(KC_3), ALGR(KC_5), S(KC_4), S(KC_5),                         KC_NO, KC_EQL, KC_MINS, S(KC_EQL), KC_GRV,
+        S(KC_2), S(KC_3), ALGR(KC_5), S(KC_4), S(KC_5),                         KC_BSLS, KC_EQL, KC_MINS, S(KC_EQL), KC_GRV,
         S(KC_COMM), S(KC_DOT), S(KC_9), S(KC_0), S(KC_7),                       S(KC_BSLS), S(KC_LBRC), S(KC_RBRC), KC_LBRC, KC_RBRC,
         ALGR(CO_D), ALGR(CO_X), ALGR(CO_C), ALGR(CO_T), ALGR(CO_R),             S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), DEGREE,
         KC_NO, KC_DEL,                                                          G(KC_DOT), A(KC_SPC)
     ),
     [_NAV] = LAYOUT(
-        KC_PSCR, KC_NO, KC_NO, KC_NO, KC_PWR,                                   KC_VOLU, C(G(KC_LEFT)), ALT_TAB, CTL_TAB, C(G(KC_RIGHT)),
+        KC_NO, KC_NO, KC_NO, KC_PSCR, KC_PWR,                                   KC_VOLU, C(G(KC_LEFT)), ALT_TAB, CTL_TAB, C(G(KC_RIGHT)),
         KC_ESC, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                               KC_VOLD, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
         KC_NO, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,                                KC_MUTE, C(KC_LEFT), KC_HOME, KC_END, C(KC_RIGHT),
         KC_NO, KC_LSFT,                                                         KC_NO, KC_NO
