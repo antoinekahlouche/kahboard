@@ -133,13 +133,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYM] = LAYOUT(
         S(KC_2), S(KC_3), A(CO_I), A(CO_U), S(KC_5),                            KC_BSLS, KC_EQL, KC_MINS, S(KC_EQL), KC_GRV,
         S(KC_COMM), S(KC_DOT), S(KC_9), S(KC_0), S(KC_7),                       S(KC_BSLS), S(KC_LBRC), S(KC_RBRC), KC_LBRC, KC_RBRC,
-        A_GRAVE, U_GRAVE, A(CO_C), E_AIGUE, E_GRAVE,                            S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), KC_NO,
-        KC_NO, KC_DEL,                                                          G(C(KC_SPC)), G(KC_SPC)
+        A_GRAVE, U_GRAVE, A(CO_C), E_AIGUE, E_GRAVE,                            S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), G(C(KC_SPC)),
+        KC_NO, KC_DEL,                                                          KC_NO, G(KC_SPC)
     ),
     [_NAV] = LAYOUT(
-        KC_NO, KC_NO, KC_NO, G(S(KC_5)), A(G(KC_EJCT)),                         KC_VOLU, C(KC_LEFT), GUI_TAB, CTL_TAB, C(KC_RIGHT),
-        KC_ESC, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                               KC_VOLD, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
-        KC_NO, KC_LGUI, KC_LALT, KC_RCTL, KC_NO,                                KC_MUTE, A(KC_LEFT), KC_HOME, KC_END, A(KC_RIGHT),
+        DM_REC1, DM_REC2, DM_PLY1, DM_PLY2, DM_RSTP,                                      KC_VOLU, C(KC_LEFT), GUI_TAB, CTL_TAB, C(KC_RIGHT),
+        KC_ESC, KC_MPRV, KC_MPLY, KC_MNXT, G(S(KC_5)),                          KC_VOLD, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
+        A(G(KC_EJCT)), KC_LGUI, KC_LALT, KC_RCTL, KC_NO,                        KC_MUTE, A(KC_LEFT), KC_HOME, KC_END, A(KC_RIGHT),
         KC_NO, KC_LSFT,                                                         KC_NO, KC_NO
     ),
     [_NUM] = LAYOUT(

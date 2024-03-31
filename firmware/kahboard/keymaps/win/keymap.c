@@ -112,13 +112,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYM] = LAYOUT(
         ALGR(KC_0), ALGR(KC_3), KC_LBRC, S(KC_LBRC), S(KC_QUOT),                ALGR(KC_8), KC_EQL, KC_6, S(KC_EQL), BACKTICK,
         KC_NUBS, S(KC_NUBS), KC_5, KC_MINUS, KC_1,                              ALGR(KC_6), ALGR(KC_4), ALGR(KC_EQL), ALGR(KC_5), ALGR(KC_MINUS),
-        KC_0, KC_QUOTE, KC_9, KC_2, KC_7,                                       TILDE, KC_8, S(KC_DOT), KC_BSLS, KC_NO,
-        KC_NO, KC_DEL,                                                          G(KC_COMMA), A(KC_SPC)
+        KC_0, KC_QUOTE, KC_9, KC_2, KC_7,                                       TILDE, KC_8, S(KC_DOT), KC_BSLS, G(KC_COMMA),
+        KC_NO, KC_DEL,                                                          KC_NO, A(KC_SPC)
     ),
     [_NAV] = LAYOUT(
-        KC_NO, KC_NO, KC_NO, KC_PSCR, KC_PWR,                                   KC_VOLU, C(G(KC_LEFT)), ALT_TAB, CTL_TAB, C(G(KC_RIGHT)),
-        KC_ESC, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,                               KC_VOLD, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
-        KC_NO, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,                                KC_MUTE, C(KC_LEFT), KC_HOME, KC_END, C(KC_RIGHT),
+        DM_REC1, DM_REC2, DM_PLY1, DM_PLY2, DM_RSTP,                                      KC_VOLU, C(G(KC_LEFT)), ALT_TAB, CTL_TAB, C(G(KC_RIGHT)),
+        KC_ESC, KC_MPRV, KC_MPLY, KC_MNXT, KC_PSCR,                             KC_VOLD, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
+        KC_PWR, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,                               KC_MUTE, C(KC_LEFT), KC_HOME, KC_END, C(KC_RIGHT),
         KC_NO, KC_LSFT,                                                         KC_NO, KC_NO
     ),
     [_NUM] = LAYOUT(
