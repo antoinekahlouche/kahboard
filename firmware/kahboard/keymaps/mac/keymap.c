@@ -1,35 +1,5 @@
 #include QMK_KEYBOARD_H
 
-// DEFINE COLEMAK KC IN QWERTY -------------------------------------------------
-
-#define CO_Q KC_Q
-#define CO_W KC_W
-#define CO_F KC_E
-#define CO_P KC_R
-#define CO_G KC_T
-#define CO_J KC_Y
-#define CO_L KC_U
-#define CO_U KC_I
-#define CO_Y KC_O
-#define CO_SEMICOLON KC_P
-#define CO_A KC_A
-#define CO_R KC_S
-#define CO_S KC_D
-#define CO_T KC_F
-#define CO_D KC_G
-#define CO_H KC_H
-#define CO_N KC_J
-#define CO_E KC_K
-#define CO_I KC_L
-#define CO_O KC_SEMICOLON
-#define CO_Z KC_Z
-#define CO_X KC_X
-#define CO_C KC_C
-#define CO_V KC_V
-#define CO_B KC_B
-#define CO_K KC_N
-#define CO_M KC_M
-
 // MACROS ----------------------------------------------------------------------
 
 bool is_gui_tab_active = false;
@@ -125,19 +95,19 @@ enum kahboard_layers {
 };
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
-        CO_Q, CO_W, CO_F, CO_P, CO_G,                                           CO_J, CO_L, CO_U, CO_Y, KC_QUOT, 
-        CO_A, CO_R, CO_S, CO_T, CO_D,                                           CO_H, CO_N, CO_E, CO_I, CO_O,
-        CO_Z, LGUI_T(CO_X), LALT_T(CO_C), LCTL_T(CO_V), CO_B,                   CO_K, CO_M, KC_COMM, KC_DOT, S(KC_SLSH),
+        KC_Q, KC_W, KC_E, KC_R, KC_T,                                           KC_Y, KC_U, KC_I, KC_O, KC_QUOT, 
+        KC_A, KC_S, KC_D, KC_F, KC_G,                                           KC_H, KC_J, KC_K, KC_L, KC_SEMICOLON,
+        KC_Z, LGUI_T(KC_X), LALT_T(KC_C), LCTL_T(KC_V), KC_B,                   KC_N, KC_M, KC_COMM, KC_DOT, S(KC_SLSH),
         LT(_SYM, KC_TAB), LSFT_T(KC_BSPC),                                      LT(_NAV, KC_SPC), LT(_NUM, KC_ENT)
     ),
     [_SYM] = LAYOUT(
-        S(KC_2), S(KC_3), A(CO_I), A(CO_U), S(KC_5),                            KC_BSLS, KC_EQL, KC_MINS, S(KC_EQL), KC_GRV,
+        S(KC_2), S(KC_3), A(KC_L), A(KC_I), S(KC_5),                            KC_BSLS, KC_EQL, KC_MINS, S(KC_EQL), KC_GRV,
         S(KC_COMM), S(KC_DOT), S(KC_9), S(KC_0), S(KC_7),                       S(KC_BSLS), S(KC_LBRC), S(KC_RBRC), KC_LBRC, KC_RBRC,
-        A_GRAVE, U_GRAVE, A(CO_C), E_AIGUE, E_GRAVE,                            S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), G(C(KC_SPC)),
+        A_GRAVE, U_GRAVE, A(KC_C), E_AIGUE, E_GRAVE,                            S(KC_GRV), S(KC_MINS), KC_SLSH, S(KC_8), G(C(KC_SPC)),
         KC_NO, KC_DEL,                                                          KC_NO, G(KC_SPC)
     ),
     [_NAV] = LAYOUT(
-        DM_REC1, DM_REC2, DM_PLY1, DM_PLY2, DM_RSTP,                                      KC_VOLU, C(KC_LEFT), GUI_TAB, CTL_TAB, C(KC_RIGHT),
+        DM_REC1, DM_REC2, DM_PLY1, DM_PLY2, DM_RSTP,                            KC_VOLU, C(KC_LEFT), GUI_TAB, CTL_TAB, C(KC_RIGHT),
         KC_ESC, KC_MPRV, KC_MPLY, KC_MNXT, G(S(KC_5)),                          KC_VOLD, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
         A(G(KC_EJCT)), KC_LGUI, KC_LALT, KC_RCTL, KC_NO,                        KC_MUTE, A(KC_LEFT), KC_HOME, KC_END, A(KC_RIGHT),
         KC_NO, KC_LSFT,                                                         KC_NO, KC_NO
@@ -152,8 +122,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // OVERRIDES -------------------------------------------------------------------
 
-const key_override_t comm = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, CO_SEMICOLON); // Shift , is ;
-const key_override_t dot = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, S(CO_SEMICOLON)); // Shift . is :
+const key_override_t comm = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_P); // Shift , is ;
+const key_override_t dot = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, S(KC_P)); // Shift . is :
 const key_override_t ques = ko_make_basic(MOD_MASK_SHIFT, KC_QUES, S(KC_1)); // Shift ? is !
 const key_override_t** key_overrides = (const key_override_t*[]) {
     &comm,
