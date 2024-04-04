@@ -196,16 +196,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // OVERRIDES -------------------------------------------------------------------
 
 // Shift , is ;
-const key_override_t comm_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_COMM, KC_P, MAC_BASE);
-const key_override_t comm_win = ko_make_with_layers(MOD_MASK_SHIFT, KC_M, KC_COMMA, WIN_BASE);
+const key_override_t comm_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_COMM, KC_P, ~0);
+const key_override_t comm_win = ko_make_with_layers(MOD_MASK_SHIFT, KC_M, KC_COMMA, ~4);
 // Shift . is :
-const key_override_t dot_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, S(KC_P), MAC_BASE);
-const key_override_t dot_win = ko_make_with_layers(MOD_MASK_SHIFT, S(KC_COMMA), KC_DOT, WIN_BASE);
+const key_override_t dot_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, S(KC_P), ~0);
+const key_override_t dot_win = ko_make_with_layers(MOD_MASK_SHIFT, S(KC_COMMA), KC_DOT, ~4);
 // Shift ? is !
-const key_override_t ques_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_QUES, S(KC_1), MAC_BASE);
-const key_override_t ques_win = ko_make_with_layers(MOD_MASK_SHIFT, S(KC_M), KC_SLASH, WIN_BASE);
+const key_override_t ques_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_QUES, S(KC_1), ~0);
+const key_override_t ques_win = ko_make_with_layers(MOD_MASK_SHIFT, S(KC_M), KC_SLASH, ~4);
 // Shift ' is "
-const key_override_t four_win = ko_make_with_layers(MOD_MASK_SHIFT, KC_4, KC_3, WIN_BASE);
+const key_override_t four_win = ko_make_with_layers(MOD_MASK_SHIFT, KC_4, KC_3, ~4);
 
 const key_override_t** key_overrides = (const key_override_t*[]) {
     &comm_mac,
@@ -220,12 +220,6 @@ const key_override_t** key_overrides = (const key_override_t*[]) {
 
 // OS DETECTION ----------------------------------------------------------------
 
-// void keyboard_pre_init_user(void) {
-//     tap_code(KC_KP_0);
-// }
-// void matrix_init_user(void) {
-//     tap_code(KC_KP_1);
-// }
 void keyboard_post_init_user(void) {
     wait_ms(400);
     os_variant_t detected_os = detected_host_os();
@@ -242,19 +236,3 @@ void keyboard_post_init_user(void) {
             break;
     }
 }
-// bool process_detected_host_os_kb(os_variant_t detected_os) {
-//     switch (detected_os) {
-//         case OS_MACOS:
-//             layer_move(MAC_BASE);
-//             tap_code(KC_KP_0);
-//             break;
-//         case OS_IOS:
-//         case OS_WINDOWS:
-//         case OS_LINUX:
-//         case OS_UNSURE: 
-//             layer_move(WIN_BASE);
-//             tap_code(KC_KP_1);
-//             break;
-//     }
-//     return true;
-// }
