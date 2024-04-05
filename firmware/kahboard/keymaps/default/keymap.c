@@ -196,16 +196,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // OVERRIDES -------------------------------------------------------------------
 
 // Shift , is ;
-const key_override_t comm_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_COMM, KC_P, ~0);
-const key_override_t comm_win = ko_make_with_layers(MOD_MASK_SHIFT, KC_M, KC_COMMA, ~4);
+const key_override_t comm_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_COMM, KC_P, 1 << 0);
+const key_override_t comm_win = ko_make_with_layers(MOD_MASK_SHIFT, KC_M, KC_COMMA, 1 << 4);
 // Shift . is :
-const key_override_t dot_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, S(KC_P), ~0);
-const key_override_t dot_win = ko_make_with_layers(MOD_MASK_SHIFT, S(KC_COMMA), KC_DOT, ~4);
+const key_override_t dot_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, S(KC_P), 1 << 0);
+const key_override_t dot_win = ko_make_with_layers(MOD_MASK_SHIFT, S(KC_COMMA), KC_DOT, 1 << 4);
 // Shift ? is !
-const key_override_t ques_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_QUES, S(KC_1), ~0);
-const key_override_t ques_win = ko_make_with_layers(MOD_MASK_SHIFT, S(KC_M), KC_SLASH, ~4);
+const key_override_t ques_mac = ko_make_with_layers(MOD_MASK_SHIFT, KC_QUES, S(KC_1), 1 << 0);
+const key_override_t ques_win = ko_make_with_layers(MOD_MASK_SHIFT, S(KC_M), KC_SLASH, 1 << 4);
 // Shift ' is "
-const key_override_t four_win = ko_make_with_layers(MOD_MASK_SHIFT, KC_4, KC_3, ~4);
+const key_override_t four_win = ko_make_with_layers(MOD_MASK_SHIFT, KC_4, KC_3, 1 << 4);
 
 const key_override_t** key_overrides = (const key_override_t*[]) {
     &comm_mac,
