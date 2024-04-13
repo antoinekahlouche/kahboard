@@ -177,7 +177,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ALGR(KC_0), ALGR(KC_3), KC_LBRC, S(KC_LBRC), S(KC_QUOT),                ALGR(KC_8), KC_EQL, KC_6, S(KC_EQL), BACKTICK,
         KC_NUBS, S(KC_NUBS), KC_5, KC_MINUS, KC_1,                              ALGR(KC_6), ALGR(KC_4), ALGR(KC_EQL), ALGR(KC_5), ALGR(KC_MINUS),
         KC_0, KC_QUOTE, KC_9, KC_2, KC_7,                                       TILDE, KC_8, S(KC_DOT), KC_BSLS, G(KC_COMMA),
-        KC_NO, KC_DEL,                                                          KC_NO, A(KC_SPC)
+        KC_NO, KC_DEL,                                                          KC_NO, KC_LWIN
     ),
     [WIN_NAV] = LAYOUT(
         DM_REC1, DM_REC2, DM_PLY1, DM_PLY2, DM_RSTP,                            KC_VOLU, C(G(KC_LEFT)), ALT_TAB, CTL_TAB, C(G(KC_RIGHT)),
@@ -189,7 +189,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                      KC_NO, S(KC_1), S(KC_2), S(KC_3), KC_RBRC,
         KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,                                     S(KC_0), S(KC_4), S(KC_5), S(KC_6), ALGR(KC_E),
         KC_F11, KC_F12, KC_F13, KC_F14, KC_F15,                                 S(KC_MINUS), S(KC_7), S(KC_8), S(KC_9), KC_NO,
-        A(KC_SPC), KC_NO,                                                       KC_NO, KC_NO
+        KC_LWIN, KC_NO,                                                         KC_NO, KC_NO
     ),
 };
 
