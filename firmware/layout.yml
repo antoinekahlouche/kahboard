@@ -1,0 +1,90 @@
+# https://keymap-drawer.streamlit.app/
+
+layout:
+    qmk_keyboard: corne_rotated
+    layout_name: LAYOUT_split_3x5_3
+layers:
+    BASE:
+        - [q, w, e, r, t, y, u, i, o, p]
+        - [a, s, d, f, g, h, j, k, l, "'"]
+        - [
+              z,
+              { h: Cmd, t: x },
+              { h: Opt, t: c },
+              { h: Ctrl, t: v },
+              b,
+              n,
+              { h: Ctrl, t: m },
+              { h: Opt, t: "," },
+              { h: Cmd, t: "." },
+              "?",
+          ]
+        - { h: SYM, t: ⇥ }
+        - { h: SHIFT, t: ⌫ }
+        - { h: NAV, t: ␣ }
+        - { h: NUM, t: ↵ }
+    SHIFT:
+        - [Q, W, E, R, T, Y, U, I, O, P]
+        - [A, S, D, F, G, H, J, K, L, '"']
+        - [
+              Z,
+              { h: Cmd, t: X },
+              { h: Opt, t: C },
+              { h: Ctrl, t: V },
+              B,
+              N,
+              { h: Ctrl, t: M },
+              { h: Opt, t: ";" },
+              { h: Cmd, t: ":" },
+              "!",
+          ]
+        - { h: SYM, t: ⇤ }
+        - { type: held }
+        - { h: NAV, t: ␣ }
+        - { h: NUM, t: ↵ }
+    SYM:
+        - ["@", "#", "%", "~", null, null, "€", "$", "¥", "`"]
+        - ["<", "[",  "{", "(", "&", "|", ")", "}", "]", ">"]
+        - [
+              "à",
+              { h: Cmd, t: "ù" },
+              { h: Opt, t: "ç" },
+              { h: Ctrl, t: "é" },
+              "è",
+              "_",
+              { h: Ctrl, t: "^" },
+              { h: Opt, t: "¨" },
+              { h: Cmd, t: "°" },
+              "\\",
+          ]
+        - { type: held }
+        - { t: ⌦ }
+        - null
+        - null
+    NAV:
+        - [GIF, Emoji, Google, AI, null, null, Home, "▲", End, null]
+        - [Todo, Brow ser, Code, Term inal, Chat, Word Left, "◀", "▼", "▶", Word Right]
+        - [
+              null,
+              { h: Cmd, t: "" },
+              { h: Opt, t: "" },
+              { h: Ctrl, t: "" },
+              null,
+              Desk Left,
+              Shift Ctrl Tab,
+              null,
+              Ctrl Tab,
+              Desk Right,
+          ]
+        - null
+        - { h: SHIFT }
+        - { type: held }
+        - null
+    NUM:
+        - [F1, F2, F3, F4, F5, "+", 1, 2, 3, "*"]
+        - [F6, F7, F8, F9, F10, 0, 4, 5, 6, "="]
+        - [F11, { h: Cmd, t: F12 }, { h: Opt, t: F13 }, { h: Ctrl, t: F14 }, F15, "-", 7, 8, 9, "/"]
+        - null
+        - null
+        - null
+        - { type: held }

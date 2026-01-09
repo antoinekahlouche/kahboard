@@ -1,11 +1,3 @@
-http://www.keyboard-layout-editor.com/
+[Editor](https://keymap-drawer.streamlit.app)
 
-![Base layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/base.png?raw=true)
-
-![Shift layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/shift.png?raw=true)
-
-![Symbols layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/symbols.png?raw=true)
-
-![Navigation layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/navigation.png?raw=true)
-
-![Numbers layer](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/numbers.png?raw=true)
+![Layout](https://github.com/antoinekahlouche/kahboard/blob/main/firmware/layout.svg?raw=true)

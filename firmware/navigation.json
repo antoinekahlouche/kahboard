@@ -1,4 +1,0 @@
-[{a:7,f:2},"MACRO 1 REC","MACRO 2 REC","MACRO 1","MACRO 2","MACRO STOP",{x:1,f:3},"VOL+","DESK LEFT","ALT TAB","CTRL TAB","DESK RIGHT"],
-[{f:6},"⎋",{f:3},"PREV","PLAY PAUSE","NEXT","PRT SCR",{x:1},"VOL-",{f:6},"◀","▼","▲","▶"],
-[{f:2},"SLEEP",{f:6},"⌘","⌥","⌃",{f:1},"TOGGLE OS",{x:1,f:3},"MUTE",{f:2},"1 WORD LEFT",{f:3},"HOME","END",{f:2},"1 WORD RIGHT"],
-[{x:3,f:3},"",{f:6},"⇧",{x:1,c:"#00ff00"},"",{c:"#cccccc"},""]

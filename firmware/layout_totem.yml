@@ -1,0 +1,35 @@
+# https://keymap-drawer.streamlit.app/
+
+layout:
+  zmk_keyboard: totem
+
+layers:
+  BASE:
+    - [ q, w, e, r, t, y, u, i, o, p ]
+    - [ a, s, d, f, g, h, j, k, l, "'" ]
+    - [ { h: CTRL, t: ␛ }, z, x, c, v, b, n, m, ',', ., /, ↵ ]
+    - [ ⌘, { h: SHIFT, t: ⇥ }, { h: SYM, t: ⌫ }, { h: NUM, t: ⌦ }, { h: NAV, t: ␣ }, ⌥ ]
+
+  SHIFT:
+    - [ Q, W, E, R, T, Y, U, I, O, P ]
+    - [ A, S, D, F, G, H, J, K, L, '"' ]
+    - [ ▽, Z, X, C, V, B, N, M, ';', ':', \, ▽ ]
+    - [ ▽, { type: held }, ▽, ▽, ▽, ▽ ]
+
+  SYM:
+    - [ '@', '#', '%', '~', null, null, '€', '$', '¥', null ]
+    - [ '&', '[', '{', '(', '<', '>', ')', '}', ']', '`' ]
+    - [ ▽, 'à', 'ù', 'ç', 'é', 'è', '_', '^', '¨', '°', '|', ▽ ]
+    - [ ▽, ▽, { type: held }, ▽, ▽, ▽ ]
+
+  NUM:
+    - [ F1, F2, F3, F4, F5, '+', 1, 2, 3, '*' ]
+    - [ F6, F7, F8, F9, F10, 0, 4, 5, 6, '=' ]
+    - [ ▽, F11, F12, F13, F14, F15, '-', 7, 8, 9, '/', ▽ ]
+    - [ ▽, ▽, ▽, { type: held }, ▽, ▽ ]
+
+  NAV:
+    - [ GIF, Emoji, Google, AI, null, null, Home, ▲, End, null]
+    - [ Todo, Brow ser, Code, Term inal, Chat, Word Left, ◀, ▼, ▶, Word Right ]
+    - [ ▽, null, null, null, null, null, Desk Left, Shift Ctrl Tab, null, Ctrl Tab, Desk Right, ▽ ]
+    - [ ▽, ▽, ▽, ▽, { type: held }, ▽ ]
